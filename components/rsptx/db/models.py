@@ -34,6 +34,7 @@ from typing import Dict, Type
 # -------------------
 from pydantic import field_validator
 from sqlalchemy import (
+    Boolean,
     Column,
     ForeignKey,
     Index,

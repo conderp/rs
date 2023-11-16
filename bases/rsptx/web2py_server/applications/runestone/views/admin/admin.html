@@ -101,15 +101,7 @@
             <div class="settingsbox">
                 <label for="registration_locked">Lock Course Enrollment</label>
                 <input type="checkbox" id="registration_locked"
-                {{ if registration_locked: }}
-                  checked
-                {{ pass }}
-                onchange="updateCourse(this,'registration_locked')">
-            </div>
-            <div class="settingsbox">
-                <label for="registration_locked">Lock Course Enrollment</label>
-                <input type="checkbox" id="registration_locked"
-                {{ if registration_locked: }}
+                {{ if registration_locked == "true": }}
                   checked
                 {{ pass }}
                 onchange="updateCourse(this,'registration_locked')">

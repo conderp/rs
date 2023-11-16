@@ -2700,6 +2700,14 @@ def update_course():
                 attr="enable_compare_me",
                 value=request.vars.enable_compare_me,
             )
+        if "registration_locked" in request.vars:
+            db.course_attributes.update_or_insert(
+                (db.course_attributes.course_id == thecourse.id)
+                & (db.course_attributes.attr == "registration_locked"),
+                course_id=thecourse.id,
+                attr="registration_locked",
+                value=request.vars.registration_locked,
+            )
         if "show_points" in request.vars:
             db.course_attributes.update_or_insert(
                 (db.course_attributes.course_id == thecourse.id)
