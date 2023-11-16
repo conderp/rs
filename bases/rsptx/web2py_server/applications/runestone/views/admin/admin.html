@@ -99,6 +99,22 @@
                 onchange="updateCourse(this,'enable_compare_me')">
                 </div>
             <div class="settingsbox">
+                <label for="registration_locked">Lock Course Enrollment</label>
+                <input type="checkbox" id="registration_locked"
+                {{ if registration_locked: }}
+                  checked
+                {{ pass }}
+                onchange="updateCourse(this,'registration_locked')">
+            </div>
+            <div class="settingsbox">
+                <label for="registration_locked">Lock Course Enrollment</label>
+                <input type="checkbox" id="registration_locked"
+                {{ if registration_locked: }}
+                  checked
+                {{ pass }}
+                onchange="updateCourse(this,'registration_locked')">
+            </div>
+            <div class="settingsbox">
                 <label for="points">Show Points in Gradebook</label>
                 <input type="checkbox" id="points"
                 {{ if show_points: }}

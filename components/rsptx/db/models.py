@@ -782,6 +782,7 @@ class CourseAttribute(Base, IdMixin):
     course_id = Column(ForeignKey("courses.id", ondelete="CASCADE"), nullable=False)
     attr = Column(String(512), nullable=False)
     value = Column(Text, nullable=False)
+    registration_locked = Column(Boolean, default=False, nullable=False)
 
 
 class CourseLtiMap(Base, IdMixin):
