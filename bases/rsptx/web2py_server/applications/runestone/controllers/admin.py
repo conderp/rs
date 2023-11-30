@@ -620,6 +620,7 @@ def admin():
     base_course_id = base_course_id.id
     curr_start_date = course.term_start_date.strftime("%m/%d/%Y")
     downloads_enabled = "true" if sidQuery.downloads_enabled else "false"
+    registration_locked = "true" if hasattr(sidQuery, 'registration_locked') and sidQuery.registration_locked else "false"
     allow_pairs = "true" if sidQuery.allow_pairs else "false"
     keys = (
         db(
@@ -676,6 +677,7 @@ def admin():
         mst_vers=mst_vers,
         course=sidQuery,
         downloads_enabled=downloads_enabled,
+        registration_locked=registration_locked,
         allow_pairs=allow_pairs,
         instructor_course_list=instructor_course_list,
         motd=motd,
